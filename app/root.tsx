@@ -21,7 +21,14 @@ export default function App() {
 			<div className="flex h-screen flex-col justify-between">
 				<div className="flex-1">
 					<main className="grid h-full place-items-center">
-						<h1 className="text-mega">Welcome to Epic News!</h1>
+						<h1 className="text-mega">Your Journey Begins!</h1>
+						<p className="lg:text-x1 text-base text-gray-600 md:text-lg">
+							Welcome to Epic News, where the latest developements in tech are
+							found.
+						</p>
+						<button className="rounded-full bg-amber-200 px-4 py-2 text-white md:px-6 md:py-3 lg:px-8 lg:py-4">
+							Learn More?
+						</button>
 					</main>
 				</div>
 			</div>
