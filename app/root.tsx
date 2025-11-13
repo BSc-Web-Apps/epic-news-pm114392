@@ -22,11 +22,7 @@ interface TeamMemberCardProps {
   imageSrc: string;
 }
 
-export function TeamMemberCard({
-  name,
-  role,
-  imageSrc,
-}: TeamMemberCardProps) {
+export function TeamMemberCard({ name, role, imageSrc,}: TeamMemberCardProps) {
   return (
     <div className="rounded-lg bg-slate-800 p-8 w-fit">
       <img
@@ -59,28 +55,27 @@ export default function App() {
 					<main className="grid h-full place-items-center">
 						<h1 className="text-mega">Your Journey Begins!</h1>
 
-
-						<p className="lg:text-x1 text-base text-gray-600 md:text-lg">
-							Welcome to Epic News, where the latest developements in tech are
-							found.
-						</p>
-
-						<TeamMemberCard
+            <div className="flex flex-row gap-8 pt-8 m-4">
+            <TeamMemberCard
 							name="Leonard Krasner"
 							role="Senior Designer"
 							imageSrc={headshot}
 						/>
-
 						<TeamMemberCard
 						name="John Doe"
 						role="Marketing Manager"
-						imageSrc={headshot2}/>
-
+						imageSrc={headshot2}
+						/>
             <TeamMemberCard
 						name="Jenna Corey"
 						role="Finance Advisor"
-						imageSrc={headshot3}/>
-
+						imageSrc={headshot3}
+						/>
+						</div>
+						<p className="lg:text-x1 text-base text-gray-600 md:text-lg">
+							Welcome to Epic News, where the latest developements in tech are
+							found.
+						</p>
 						<button className="rounded-full bg-amber-200 px-4 py-2 text-white md:px-6 md:py-3 lg:px-8 lg:py-4">
 							Learn More?
 						</button>
