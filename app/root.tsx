@@ -85,11 +85,11 @@ export default function App() {
 							Learn More?
 						</button>
 					</main>
+					<div className="container flex justify-between pb-5">
+						<ThemeSwitch userPreference={data?.requestInfo.userPrefs.theme} />
+					</div>
+					<FooterMenuRight/>
 				</div>
-				<div className="container flex justify-between pb-5">
-          <ThemeSwitch userPreference={data?.requestInfo.userPrefs.theme} />
-        </div>
-				<FooterMenuRight/>
 			</div>
 		</Document>
 	)
