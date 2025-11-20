@@ -1,30 +1,30 @@
 import { Link, NavLink } from 'react-router'
-import logo from '#app/assets/svg/icon-placeholder.svg'
 import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'
 import { Button } from '#app/components/ui/button.tsx'
 import { type FooterProps } from './FooterBasic'
+import logo from '~/assets/png/placeholder-image.png'
 
 const FooterMenuRight = ({
 	companyName = 'Epic News!',
-	altText = 'Our company logo',
+	altText = 'Epic News Logo',
 }: FooterProps) => {
 	return (
 		<footer className="bg-secondary dark:bg-dark-secondary lg:py-16">
 			<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 container items-center justify-between border-b py-8 lg:flex">
 				<Link to="/" className="flex w-20 items-center justify-center lg:w-24">
-					<img src={logo} alt={altText} />
+					<img src={logo} alt='Epic News Logo' className="w-16"/>
 				</Link>
 
 				<div className="lg:flex">
 					<div className="text-secondary-foreground dark:text-dark-secondary-foreground flex items-start gap-6 py-8 font-bold lg:mr-24">
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#">About Us</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#">News</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#">Policies</NavLink>
 						</div>
 					</div>
 
