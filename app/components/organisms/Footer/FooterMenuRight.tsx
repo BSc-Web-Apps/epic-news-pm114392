@@ -12,7 +12,7 @@ const FooterMenuRight = ({
 		<footer className="bg-secondary dark:bg-dark-secondary lg:py-16">
 			<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 container items-center justify-between border-b py-8 lg:flex">
 				<Link to="/" className="flex w-20 items-center justify-center lg:w-24">
-					<img src={logo} alt='Epic News Logo' className="w-16"/>
+					<img src={logo} alt={altText} className="w-16"/>
 				</Link>
 
 				<div className="lg:flex">

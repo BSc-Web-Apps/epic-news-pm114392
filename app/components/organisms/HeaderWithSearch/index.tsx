@@ -25,7 +25,7 @@ export default function HeaderWithSearch() {
 					{user ? (
 						<UserDropdown />
 					) : (
-						<Button asChild variant="default" size="lg">
+						<Button asChild variant="default" size="lg" className='bg-purple-600 text-white'>
 							<Link to="/login">Log In</Link>
 						</Button>
 					)}
