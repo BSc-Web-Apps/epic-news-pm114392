@@ -14,10 +14,34 @@ export default function HeaderWithSearch() {
 	return (
 		<header className="container py-6">
 			<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
+				<Link to="/" className="flex items-center gap-4">
 				<div className="flex items-center justify-center gap-4">
 					<img src={logo} alt="Epic News Logo" className="w-16"/>
         <span className="text-sm text-foreground">Epic News</span>
         </div>
+				</Link>
+				<div className="flex flex-1 justify-center gap-8">
+					   <Link
+            to="/news"
+						prefetch='intent'
+            className="text-sm font-semibold text-muted-foreground transition hover:text-foreground"
+          >
+            News
+          </Link>
+          <Link
+            to="/about-us"
+						prefetch='intent'
+            className="text-sm font-semibold text-muted-foreground transition hover:text-foreground"
+          >
+            About us
+          </Link>
+					<Link to="/contact-us"
+					prefetch='intent'
+					className="text-sm font-semibold text-muted-foreground transition hover:text-foreground"
+					>
+						Contact us
+					</Link>
+				</div>
 				<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 					{searchBar}
 				</div>
