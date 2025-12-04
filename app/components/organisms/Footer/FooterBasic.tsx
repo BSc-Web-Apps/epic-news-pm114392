@@ -1,4 +1,4 @@
-import logo from '#/app/assets/svg/icon-placeholder.svg'
+import logo from '~/assets/svg/icon-placeholder.svg'
 
 export interface FooterProps {
 	companyName?: string
@@ -6,7 +6,7 @@ export interface FooterProps {
 }
 
 const FooterBasic = ({
-	companyName = 'CHANGE THIS TO YOUR COMPANY NAME!',
+	companyName = 'Epic News!',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
