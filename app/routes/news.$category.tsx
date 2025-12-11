@@ -11,6 +11,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
   invariant(typeof category === 'string', 'Category not found')
     const categoryTitle = toTitleCase(category)
 
+
       const allArticles = await prisma.article.findMany({
     select: {
       id: true,
@@ -41,6 +42,7 @@ export default function NewsCategoryPage() {
          {allArticles.map((article) => (
           <ArticleCard
             key={article.id}
+            articleId={article.id}
             title={article.title}
             category={article.category?.name}
             
