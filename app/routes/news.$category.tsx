@@ -1,5 +1,5 @@
 import { invariant } from '@epic-web/invariant'
-import { hover } from '@testing-library/user-event/dist/cjs/convenience/hover.js'
+
 import { type LoaderFunctionArgs, data, useLoaderData } from 'react-router'
 import ArticleCard from '~/components/organisms/ArticleCard.tsx'
 import { prisma } from '~/utils/db.server.ts'
@@ -37,11 +37,13 @@ export default function NewsCategoryPage() {
     <div className="container py-16">
       <h2 className="text-h2">{categoryTitle}</h2>
       <div className="mt-8 grid grid-cols-5 gap-6 md:grid-cols-3 lg:grid-cols-5">
+        
          {allArticles.map((article) => (
           <ArticleCard
             key={article.id}
             title={article.title}
             category={article.category?.name}
+            
           />
         ))}
   {/* <WireframeBlock />
