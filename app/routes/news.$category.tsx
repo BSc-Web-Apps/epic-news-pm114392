@@ -1,7 +1,9 @@
 import { invariant } from '@epic-web/invariant'
+import { hover } from '@testing-library/user-event/dist/cjs/convenience/hover.js'
 import { type LoaderFunctionArgs, data, useLoaderData } from 'react-router'
-import { toTitleCase } from '~/utils/stringUtils.ts'
+import ArticleCard from '~/components/organisms/ArticleCard.tsx'
 import { prisma } from '~/utils/db.server.ts'
+import { toTitleCase } from '~/utils/stringUtils.ts'
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { category } = params
@@ -34,12 +36,13 @@ export default function NewsCategoryPage() {
   return (
     <div className="container py-16">
       <h2 className="text-h2">{categoryTitle}</h2>
-      <div className="grid grid-cols-5 gap-6">
-        {allArticles.map(article => (
-          <div key={article.id}>
-            <h3>{article.title}</h3>
-            <p>{article.category?.name || 'General News'}</p>
-          </div>
+      <div className="mt-8 grid grid-cols-5 gap-6 md:grid-cols-3 lg:grid-cols-5">
+         {allArticles.map((article) => (
+          <ArticleCard
+            key={article.id}
+            title={article.title}
+            category={article.category?.name}
+          />
         ))}
   {/* <WireframeBlock />
   <WireframeBlock />
