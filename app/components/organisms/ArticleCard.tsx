@@ -1,18 +1,19 @@
+import  { type ReactElement } from "react";
+import { BiCast, BiBriefcaseAlt2, BiCameraMovie, BiNews } from "react-icons/bi";
 import { Link } from 'react-router'
-import { type IconName } from "react-icons/bi";
-import { BiCast, BiBriefcaseAlt2, BiCameraMovie, BiNews  } from "react-icons/bi";
-import { getArticleImgSrc } from '~/utils/misc.tsx'
 import siteLogo from '~/assets/png/placeholder-image.png' 
+import { getArticleImgSrc } from '~/utils/misc.tsx'
 interface ArticleCardProps {
   articleId: string
   title: string
   category?: string
   objectKey?: string
 }
+ 
 
 export default function ArticleCard({ articleId, title, category, objectKey }: ArticleCardProps) {
    const imageSrc = objectKey ? getArticleImgSrc(objectKey) : siteLogo
-   const categoryIcons: { [key: string]: IconName } = {
+   const categoryIcons: { [key: string]: ReactElement } = {
     Business: <BiBriefcaseAlt2 size={20} className="text-red-300" />,
     Entertainment: <BiCameraMovie size={20} className="text-red-300" />,
     Technology: <BiCast size={20} className="text-red-300" />,
@@ -20,6 +21,7 @@ export default function ArticleCard({ articleId, title, category, objectKey }: A
   }
 
   return (
+    <Link to={`/article/${articleId}`}>
     <div>
       <div>
         <img src={imageSrc}  alt={title}  />
@@ -29,10 +31,11 @@ export default function ArticleCard({ articleId, title, category, objectKey }: A
 
         <div className="flex items-center gap-2">
           {categoryIcons[category]}
-          <p className="text-sm text-red-300">{category}</p>
+          <p className="text-sm text-red-300">{category || 'General News'}</p>
         </div>
       </div>
     </div>
+    </Link>
   )
 }
 
