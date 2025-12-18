@@ -32,7 +32,7 @@ export default function Index() {
 					imageRight={true}
 					hasBackgroundColour={false}
 				>
-					<div className="flex flex-col gap-8 px-8">
+					<div className="flex flex-col gap-8 px-4">
 						<h2 className="text-h2">Welcome to Epic News</h2>
 						<p className="text-lg">
 							Keep up to date with the latest tech news.
