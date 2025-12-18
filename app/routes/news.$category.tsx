@@ -5,6 +5,7 @@ import ArticleCard from '~/components/organisms/ArticleCard.tsx'
 import { prisma } from '~/utils/db.server.ts'
 import { toTitleCase } from '~/utils/stringUtils.ts'
 
+
 export async function loader({ params }: LoaderFunctionArgs) {
   const { category } = params
 
@@ -18,6 +19,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
       title: true,
       category: { select: { name: true } },
       images: { select: { id: true } },
+  
     },
   })
 
@@ -45,6 +47,7 @@ export default function NewsCategoryPage() {
             articleId={article.id}
             title={article.title}
             category={article.category?.name}
+            objectKey={article.images[0]?.objectKey}
             
           />
         ))}
