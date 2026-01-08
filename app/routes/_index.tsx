@@ -23,7 +23,7 @@ export default function Index() {
 	const { allArticles } = useLoaderData<typeof loader>()
 
 	return (
-		<main className="grid h-full place-items-center">
+		<main className="grid h-full gap-8 place-items-center">
 			<h1 className="text-mega">Your Journey Begins!</h1>
 
 			<div className="w-full py-16">

@@ -24,9 +24,9 @@ export default function ArticleCard({ articleId, title, category, objectKey }: A
     <Link to={`/article/${articleId}`}>
     <div>
       <div>
-        <img src={imageSrc}  alt={title}  />
+        <img src={imageSrc}  alt={title}  className="transition: transform 0.3s ease transform-origin: center"/>
       </div>
-      <div className="flex h-64 cursor-pointer flex-col justify-between rounded bg-red-900 p-4 transition-all duration-500 hover:scale-110">
+      <div className="flex h-64 cursor-pointer flex-col justify-between rounded bg-red-900 p-4 transition-all duration-500 hover:scale-110 transform: scale(1.05)">
         <h3 className="line-clamp-3 text-xl font-bold">{title}</h3>
 
         <div className="flex items-center gap-2">

@@ -46,6 +46,6 @@ export default function ArticlePage() {
       <p>{article.owner?.name}</p>
     </div>
   ) : (
-    <ArticleNotFound />
+    <ArticleNotFound/>
   )
 }
